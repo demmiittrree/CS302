@@ -1,0 +1,13 @@
+Before pop front: Marge
+After pop front: Lisa
+
+Before pop back: Bart
+After pop back: Homer
+
+Before pop front: Lisa
+After pop front: Maggie
+
+Before pop back: Homer
+After pop back: Maggie
+
+Before pop front: Maggie

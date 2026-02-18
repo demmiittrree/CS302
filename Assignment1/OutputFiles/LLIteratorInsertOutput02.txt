@@ -1,0 +1,9 @@
+Mr.Burns Barney Moe Marge Lisa Maggie Homer Bart ComicBookGuy 
+
+ComicBookGuy Bart Homer Maggie Lisa Marge Moe Barney Mr.Burns 
+
+
+Mr.Burns Barney Moe Marge Lisa Maggie Homer Bart ComicBookGuy Carl 
+
+Carl ComicBookGuy Bart Homer Maggie Lisa Marge Moe Barney Mr.Burns 
+

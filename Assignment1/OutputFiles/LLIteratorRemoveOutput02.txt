@@ -1,0 +1,11 @@
+Mr.Burns Barney Moe Marge Lisa Maggie Homer Bart ComicBookGuy 
+
+ComicBookGuy Bart Homer Maggie Lisa Marge Moe Barney Mr.Burns 
+
+Iterator (Before Remove): Mr.Burns
+Iterator (After Remove): Barney
+
+Barney Moe Marge Lisa Maggie Homer Bart ComicBookGuy 
+
+ComicBookGuy Bart Homer Maggie Lisa Marge Moe Barney 
+

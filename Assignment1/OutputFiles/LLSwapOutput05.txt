@@ -1,0 +1,16 @@
+Mr.Burns Barney Moe Marge Lisa Maggie Homer Bart ComicBookGuy 
+
+ComicBookGuy Bart Homer Maggie Lisa Marge Moe Barney Mr.Burns 
+
+Before Swap
+i: Mr.Burns
+j: ComicBookGuy
+
+After Swap
+i: ComicBookGuy
+j: Mr.Burns
+
+ComicBookGuy Barney Moe Marge Lisa Maggie Homer Bart Mr.Burns 
+
+Mr.Burns Bart Homer Maggie Lisa Marge Moe Barney ComicBookGuy 
+
