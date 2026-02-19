@@ -97,8 +97,13 @@ public:
 	void swap(Iterator&, Iterator&);
 
 	// merge sort functions
-    Node* findMiddle(Node* head);
+    Node* split(Node* head);
+	Node* merge(Node* first, Node* second);
 	Node* mergeSort(Node* head);
+
+	Node* getHead() {
+		return head;
+	}
 };
 
 
