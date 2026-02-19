@@ -96,7 +96,9 @@ public:
 
 	void swap(Iterator&, Iterator&);
 
-    int findMiddle(int right);
+	// merge sort functions
+    Node* findMiddle(Node* head);
+	Node* mergeSort(Node* head);
 };
 
 
