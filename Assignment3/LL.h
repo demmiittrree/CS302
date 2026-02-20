@@ -6,7 +6,8 @@
 template <class T>
 class LL
 {
-private:
+public:
+	// made node public so can access in cpp files
 	class Node
 	{
 	public:
@@ -21,7 +22,7 @@ private:
 	Node * head;
 	Node * tail;
 
-public:
+	
 	class Iterator
 	{
 	private:

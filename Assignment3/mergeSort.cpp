@@ -107,8 +107,19 @@ int main()
 		list.push_back(x); // add each node to the end
 	}
 
-	// split the list
-	list.mergeSort(list.getHead());
-
+	// merge sort list
+	LL<int>::Node* sortedList = list.mergeSort(list.getHead());
+	// make list head the new sorted list
+	list.head = sortedList;
+	
+	// fix tail since the order was changed
+	LL<int>::Node* fixTail = list.head;
+	// go to end of list
+	while (fixTail->next != nullptr) {
+		fixTail = fixTail->next;
+	}
+	// update tail
+	list.tail = fixTail;
+	
 	return 0;
 }
