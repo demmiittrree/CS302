@@ -105,6 +105,9 @@ public:
 	Node* getHead() {
 		return head;
 	}
+
+	// bubble sort functions
+	Node* bubbleSort(LL list);
 };
 
 
