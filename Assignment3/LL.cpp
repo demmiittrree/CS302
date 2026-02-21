@@ -11,6 +11,7 @@
 #include "LL.h"
 #include <string>
 #include <cstdlib>
+#include <iostream>
 
 using namespace std;
 
@@ -257,29 +258,115 @@ void LL<T>::insertNode(const LL<T>::Iterator& it, const T& item)
 template <class T>
 void LL<T>::swap(LL<T>::Iterator& i, LL<T>::Iterator& j)
 {
-	// keep track of next and prev of both iterators
-    Node* iNext = i.current->next;
-    Node* iPrev = i.current->prev;
-    Node* jNext = j.current->next;
-    Node* jPrev = j.current->prev;
-    
-    // make node at iterator i's next and previous, 
-    // iterator j's next and previous
-    i.current->next = jNext;
-    i.current->prev = jPrev;
-    // make node at iterator j's next and previous, 
-    // iterator i's next and previous
-    j.current->next = iNext;
-    j.current->prev = iPrev;
+    // make sure not swapping same nodes
+    if (i.current == j.current) {
+        return;
+    }
+    // make sure not null
+    if (i.current == nullptr || j.current == nullptr) {
+        return;
+    }
 
-    // make node before j have j as its next
-    j.current->prev->next = j.current;
-    // make node after j have j as its prev
-    j.current->next->prev = j.current;
-    // make node before j have j as its next
-    i.current->prev->next = i.current;
-    // make node after i have i as its prev
-    i.current->next->prev = i.current;
+    // use nodes for my sanity
+    Node* first = i.current;
+    Node* second = j.current;
+
+    // save prev and next of nodes being swapped
+    Node* firstPrev = first->prev;
+    Node* firstNext = first->next;
+    Node* secondPrev = second->prev;
+    Node* secondNext = second->next;
+
+    // check if first->next is second
+    if (firstNext == second) {
+        // rewire neighboring nodes 
+
+        // check if first is head
+        if (firstPrev == nullptr) {
+            head = second;
+        } else {
+            firstPrev->next = second;
+        }
+        // check if second is tail
+        if (secondNext == nullptr) {
+            tail = first;
+        } else {
+            secondNext->prev = first;
+        }
+        
+        // rewire swapped nodes
+        first->next = secondNext;
+        second->next = first;
+        first->prev = second;
+        second->prev = firstPrev;
+    } 
+    // do the same thing but with second being before first
+    else if (secondNext == first) {
+        if (secondPrev == nullptr) {
+            head = first;
+        } else {
+            secondPrev->next = first;
+        }
+        if (firstNext == nullptr) {
+            tail = second;
+        } else {
+            firstNext->prev = second;
+        }
+        
+        second->next = firstNext;
+        first->next = second;
+        second->prev = first;
+        first->prev = secondPrev;
+    }
+    // if the nodes arent next to each other
+    else {
+        // rewire neighbors
+        if (firstPrev != nullptr) {
+            firstPrev->next = second;
+        }
+        if (firstNext != nullptr) {
+            firstNext->prev = second;
+        }
+        if (secondPrev != nullptr) {
+            secondPrev->next = first;
+        }
+        if (secondNext != nullptr) {
+            secondNext->prev = first;
+        }
+
+        // check if nodes were head or tail
+        if (firstPrev == nullptr) {
+            head = second;
+        }
+        if (firstNext == nullptr) {
+            tail = second;
+        }
+        if (secondPrev == nullptr) {
+            head = first;
+        }
+        if (secondNext == nullptr) {
+            tail = first;
+        }
+
+        // rewire swapped nodes
+        first->next = secondNext;
+        second->next = firstNext;
+        first->prev = secondPrev;
+        second->prev = firstPrev;
+
+    }
+}
+
+
+template <class T>
+void LL<T>::printList() {
+    // use node to traverse list
+    Node* current = head;
+
+    while (current != nullptr) {
+        cout << current->data << " ";
+        current = current->next;
+    }
 }
 
 template class LL<int>;

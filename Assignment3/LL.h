@@ -107,7 +107,10 @@ public:
 	}
 
 	// bubble sort functions
-	Node* bubbleSort(LL list);
+	void bubbleSort(LL<T> &list);
+
+	// print function
+	void printList();
 };
 
 

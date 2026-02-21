@@ -9,7 +9,7 @@ template <class T>
 void LL<T>::bubbleSort(LL &list) {
 	// if there is one or less nodes
 	if (list.head == nullptr || list.head->next == nullptr) {
-		return list.head;
+		return;
 	}
 
 	// checks if there was a swap
