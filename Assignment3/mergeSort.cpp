@@ -5,18 +5,29 @@ using std::cout;
 using std::endl;
 using std::size_t;
 
+template <typename T>
+void printList(typename LL<T>::Node* head) {
+    // use node to traverse list
+    typename LL<T>::Node* current = head;
+
+    while (current != nullptr) {
+        cout << current->data << " ";
+        current = current->next;
+    }
+}
+
 // define split class
-template <class T>
-typename LL<T>::Node* LL<T>::split(Node* head) {
+template <typename T>
+typename LL<T>::Node* split(typename LL<T>::Node* head) {
 	// check if there is one or less nodes
 	if (head == nullptr || head->next == nullptr) {
 		return head;
 	}
 
 	// create fast node that will reach end of list
-	Node* fast = head;
+	typename LL<T>::Node* fast = head;
 	// create slow node that will reach middle of the list
-	Node* slow = head;
+	typename LL<T>::Node* slow = head;
 
 	// make fast and slow traverse list
 	while (fast->next != nullptr && fast->next->next != nullptr) {
@@ -26,7 +37,7 @@ typename LL<T>::Node* LL<T>::split(Node* head) {
 
 	// split
 	// hold node after middle
-	Node* temp = slow->next;
+	typename LL<T>::Node* temp = slow->next;
 	// make middle node's next point to nothing
 	slow->next = nullptr;
 	// if theres a node after middle node
@@ -42,7 +53,7 @@ typename LL<T>::Node* LL<T>::split(Node* head) {
 
 // define merge class
 template <class T>
-typename LL<T>::Node* LL<T>::merge(Node* first, Node* second) {
+typename LL<T>::Node* merge(typename LL<T>::Node* first, typename LL<T>::Node* second) {
 	// base call 
 	// check if either list has no nodes, if so, return the other
 	if (first == nullptr) {
@@ -69,7 +80,7 @@ typename LL<T>::Node* LL<T>::merge(Node* first, Node* second) {
 	// if the second list is less than the first
 	else {
 		// recursive call to merge lists
-		second->next = merge (first, second->next);
+		second->next = merge(first, second->next);
 		// if there's a node in front of second
 		if (second->next != nullptr) {
 			// connect the nodes together
@@ -84,7 +95,7 @@ typename LL<T>::Node* LL<T>::merge(Node* first, Node* second) {
 
 // define mergeSort class
 template <class T>
-typename LL<T>::Node* LL<T>::mergeSort(Node* head) {
+typename LL<T>::Node* mergeSort(typename LL<T>::Node* head) {
 	// base call 
 	// if the list has 1 or no nodes
 	if (head == nullptr || head->next == nullptr) {
@@ -92,7 +103,7 @@ typename LL<T>::Node* LL<T>::mergeSort(Node* head) {
 	}
 
 	// split the list into two
-	Node* newHead = split(head);
+	typename LL<T>::Node* newHead = split(head);
 
 	// recursive call for each half (splits up lists) 
 	head = mergeSort(head);
@@ -112,10 +123,8 @@ int main()
 		list.push_back(x); // add each node to the end
 	}
 
-	list.printList();
-
 	// merge sort list
-	LL<int>::Node* sortedList = list.mergeSort(list.getHead());
+	LL<int>::Node* sortedList = mergeSort<int>(list.head);
 	// make list head equal to the new sorted list, starting from head
 	list.head = sortedList;
 	
@@ -128,8 +137,8 @@ int main()
 	// update tail
 	list.tail = fixTail;
 
-	cout << endl;
-	list.printList();
+	// print sorted list
+	printList<int>(list.head);
 	
 	return 0;
 }

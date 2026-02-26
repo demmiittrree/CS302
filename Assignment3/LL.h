@@ -6,8 +6,7 @@
 template <class T>
 class LL
 {
-public:
-	// made node public so can access in cpp files
+private:
 	class Node
 	{
 	public:
@@ -22,7 +21,7 @@ public:
 	Node * head;
 	Node * tail;
 
-	
+public:
 	class Iterator
 	{
 	private:
@@ -96,21 +95,6 @@ public:
 	Iterator end() const { return Iterator(tail); }
 
 	void swap(Iterator&, Iterator&);
-
-	// merge sort functions
-    Node* split(Node* head);
-	Node* merge(Node* first, Node* second);
-	Node* mergeSort(Node* head);
-
-	Node* getHead() {
-		return head;
-	}
-
-	// bubble sort functions
-	void bubbleSort();
-
-	// print function
-	void printList();
 };
 
 

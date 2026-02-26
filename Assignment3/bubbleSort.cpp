@@ -4,11 +4,23 @@ using std::cin;
 using std::cout;
 using std::endl;
 
+template <typename T>
+void printList(LL<T>& list) {
+	
+	// use iterators to access list, go until end of list
+	for (typename LL<T>::Iterator it = list.begin();
+		it != typename LL<T>::Iterator(nullptr); ++it) {
+			// print value of iterator 
+			cout << *it << " ";
+
+	}
+}
+
 // define bubble sort function
 template <class T>
-void LL<T>::bubbleSort() {
+void bubbleSort(LL<T>& list) {
 	// if there is one or less nodes
-	if (this->head == nullptr || this->head->next == nullptr) {
+	if (list.isEmpty() || list.begin() == list.end()) {
 		return;
 	}
 
@@ -20,15 +32,16 @@ void LL<T>::bubbleSort() {
 		swapped = false;
 
 		// use iterators to traverse list
-		LL<T>::Iterator i(this->head);
-		LL<T>::Iterator j(this->head->next);
+		typename LL<T>::Iterator i = list.begin();
+		typename LL<T>::Iterator j = list.begin();
+		++j;
 
 		// go until j is nullptr
-		while (j.current != nullptr) {
+		while (j != nullptr) {
 			// if data in i is greater than j
-			if (i.current->data > j.current->data)  {
+			if (*i > *j)  {
 				// swap nodes
-				swap(j, i);
+				list.swap(j,i);
 				// make swapped true
 				swapped = true;	
 			}
@@ -47,10 +60,8 @@ int main()
 	while (cin >> x)
 		list.push_back(x);
 
-	list.printList();
-	list.bubbleSort();
-	cout << endl;
-	list.printList();
+	bubbleSort(list);
+	printList(list);
 
 	return 0;
 }

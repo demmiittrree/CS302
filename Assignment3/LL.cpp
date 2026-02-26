@@ -358,16 +358,7 @@ void LL<T>::swap(LL<T>::Iterator& i, LL<T>::Iterator& j)
 }
 
 
-template <class T>
-void LL<T>::printList() {
-    // use node to traverse list
-    Node* current = head;
 
-    while (current != nullptr) {
-        cout << current->data << " ";
-        current = current->next;
-    }
-}
 
 template class LL<int>;
 template class LL<std::string>;
