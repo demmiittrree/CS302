@@ -7,29 +7,36 @@ using std::size_t;
 
 // define split class
 template <class T>
-typename LL<T>::Node* LL<T>::split() {
+typename LL<T>::Node* LL<T>::split(Node* head) {
 	// check if there is one or less nodes
-	if (this->head == nullptr || this->head->next == nullptr) {
-		return this->head;
+	if (head == nullptr || head->next == nullptr) {
+		return head;
 	}
 
 	// create fast node that will reach end of list
-	Node* fast = this->head;
+	Node* fast = head;
 	// create slow node that will reach middle of the list
-	Node* slow = this->head;
+	Node* slow = head;
 
 	// make fast and slow traverse list
-	while (fast != nullptr && fast != this->tail) {
+	while (fast->next != nullptr && fast->next->next != nullptr) {
 		fast = fast->next->next;
 		slow = slow->next;
 	}
 
-	// split the list into two different lists
-	slow->prev->next = nullptr;
-	slow->prev = nullptr;
+	// split
+	// hold node after middle
+	Node* temp = slow->next;
+	// make middle node's next point to nothing
+	slow->next = nullptr;
+	// if theres a node after middle node
+	if (temp != nullptr) {
+		// make its previous = null
+		temp->prev = nullptr;
+	}
 
 	// return list #2's head
-	return slow;
+	return temp;
 }
 
 
@@ -77,23 +84,19 @@ typename LL<T>::Node* LL<T>::merge(Node* first, Node* second) {
 
 // define mergeSort class
 template <class T>
-typename LL<T>::Node* LL<T>::mergeSort() {
+typename LL<T>::Node* LL<T>::mergeSort(Node* head) {
 	// base call 
 	// if the list has 1 or no nodes
-	if (this->head == nullptr || this->head->next == nullptr) {
+	if (head == nullptr || head->next == nullptr) {
 		return head;
 	}
 
 	// split the list into two
-	Node* newHead = this->split();
-
-	// make a new list and make newHead the head
-	LL<T> newList;
-	newList.head = newHead;
+	Node* newHead = split(head);
 
 	// recursive call for each half (splits up lists) 
-	this->head = mergeSort(head);
-	newList.head = mergeSort(newHead);
+	head = mergeSort(head);
+	newHead = mergeSort(newHead);
 
 	// merge and sort the halves
 	return merge(head, newHead);
@@ -109,9 +112,11 @@ int main()
 		list.push_back(x); // add each node to the end
 	}
 
+	list.printList();
+
 	// merge sort list
 	LL<int>::Node* sortedList = list.mergeSort(list.getHead());
-	// make list head the new sorted list
+	// make list head equal to the new sorted list, starting from head
 	list.head = sortedList;
 	
 	// fix tail since the order was changed
@@ -122,6 +127,9 @@ int main()
 	}
 	// update tail
 	list.tail = fixTail;
+
+	cout << endl;
+	list.printList();
 	
 	return 0;
 }

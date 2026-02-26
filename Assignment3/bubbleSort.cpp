@@ -36,8 +36,6 @@ void LL<T>::bubbleSort() {
 			++i;
 			++j;
 		}
-
-	
 	}
 }
 
