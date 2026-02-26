@@ -107,7 +107,7 @@ public:
 	}
 
 	// bubble sort functions
-	void bubbleSort(LL<T> &list);
+	void bubbleSort();
 
 	// print function
 	void printList();

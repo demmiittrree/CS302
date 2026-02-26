@@ -267,94 +267,94 @@ void LL<T>::swap(LL<T>::Iterator& i, LL<T>::Iterator& j)
         return;
     }
 
-    // use nodes for my sanity
-    Node* first = i.current;
-    Node* second = j.current;
-
-    // save prev and next of nodes being swapped
-    Node* firstPrev = first->prev;
-    Node* firstNext = first->next;
-    Node* secondPrev = second->prev;
-    Node* secondNext = second->next;
-
-    // check if first->next is second
-    if (firstNext == second) {
-        // rewire neighboring nodes 
-
-        // check if first is head
-        if (firstPrev == nullptr) {
-            head = second;
+    // if i -> j
+    if (i.current->next == j.current) {
+        // check if i is the head
+        if (i.current->prev) {
+            i.current->prev->next = j.current;
         } else {
-            firstPrev->next = second;
+            head = j.current;
         }
-        // check if second is tail
-        if (secondNext == nullptr) {
-            tail = first;
+        // check if j is the tail
+        if (j.current->next) {
+            j.current->next->prev = i.current;
         } else {
-            secondNext->prev = first;
+            tail = i.current;
+        }
+
+        // swap adjacent i->j
+        i.current->next = j.current->next;
+        j.current->prev = i.current->prev;
+        i.current->prev = j.current;
+        j.current->next = i.current;
+    }
+
+    // if j -> i
+    if (j.current->next == i.current) {
+        // check if j is the head
+        if (j.current->prev) {
+            j.current->prev->next = i.current;
+        } else {
+            head = i.current;
+        }
+        // check if i is the tail
+        if (i.current->next) {
+            i.current->next->prev = j.current;
+        } else {
+            tail = j.current;
+        }
+
+        // swap adjacent i->j
+        j.current->next = i.current->next;
+        i.current->prev = j.current->prev;
+        j.current->prev = i.current;
+        i.current->next = j.current;
+    }
+
+    // if nodes are NOT adjacent
+    if (i.current->next != j.current && j.current->next != i.current) {
+         // save i and j's next and prev
+        Node* iPrev = i.current->prev;
+        Node* iNext = i.current->next;
+        Node* jPrev = j.current->prev;
+        Node* jNext = j.current->next;
+        
+        // check if i is the head
+        if (iPrev) {
+            iPrev->next = j.current;
+        } else {
+            head = j.current;
+        }
+        // check if i is the tail
+        if (iNext) {
+            iNext->prev = j.current;
+        } else {
+            tail = j.current;
+        }
+        // check if j is the head
+        if (jPrev) {
+            jPrev->next = i.current;
+        } else {
+            head = i.current;
+        }
+        // check if j is the tail
+        if (jNext) {
+            jNext->prev = i.current;
+        } else {
+            tail = i.current;
         }
         
-        // rewire swapped nodes
-        first->next = secondNext;
-        second->next = first;
-        first->prev = second;
-        second->prev = firstPrev;
-    } 
-    // do the same thing but with second being before first
-    else if (secondNext == first) {
-        if (secondPrev == nullptr) {
-            head = first;
-        } else {
-            secondPrev->next = first;
-        }
-        if (firstNext == nullptr) {
-            tail = second;
-        } else {
-            firstNext->prev = second;
-        }
-        
-        second->next = firstNext;
-        first->next = second;
-        second->prev = first;
-        first->prev = secondPrev;
+        // swap their next and prevs
+        i.current->prev = jPrev;
+        i.current->next = jNext;
+        j.current->prev = iPrev;
+        j.current->next = iNext;
     }
-    // if the nodes arent next to each other
-    else {
-        // rewire neighbors
-        if (firstPrev != nullptr) {
-            firstPrev->next = second;
-        }
-        if (firstNext != nullptr) {
-            firstNext->prev = second;
-        }
-        if (secondPrev != nullptr) {
-            secondPrev->next = first;
-        }
-        if (secondNext != nullptr) {
-            secondNext->prev = first;
-        }
 
-        // check if nodes were head or tail
-        if (firstPrev == nullptr) {
-            head = second;
-        }
-        if (firstNext == nullptr) {
-            tail = second;
-        }
-        if (secondPrev == nullptr) {
-            head = first;
-        }
-        if (secondNext == nullptr) {
-            tail = first;
-        }
-
-        // rewire swapped nodes
-        first->next = secondNext;
-        second->next = firstNext;
-        first->prev = secondPrev;
-        second->prev = firstPrev;
-
-    }
+    // swap iterators
+    Node* temp = i.current;
+    i.current = j.current;
+    j.current = temp;
 }
 
 

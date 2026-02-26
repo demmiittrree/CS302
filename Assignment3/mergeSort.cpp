@@ -7,31 +7,29 @@ using std::size_t;
 
 // define split class
 template <class T>
-typename LL<T>::Node* LL<T>::split(Node* head) {
+typename LL<T>::Node* LL<T>::split() {
+	// check if there is one or less nodes
+	if (this->head == nullptr || this->head->next == nullptr) {
+		return this->head;
+	}
+
 	// create fast node that will reach end of list
-	Node* fast = head;
+	Node* fast = this->head;
 	// create slow node that will reach middle of the list
-	Node* slow = head;
+	Node* slow = this->head;
 
 	// make fast and slow traverse list
-	while (fast != nullptr && fast->next != nullptr) {
+	while (fast != nullptr && fast != this->tail) {
 		fast = fast->next->next;
 		slow = slow->next;
 	}
 
-	// make temp equal to node AFTER middle (or right-middle)
-	Node* temp = slow->next;
 	// split the list into two different lists
-	slow->next = nullptr;
-	
-	// double checks that there is more than one node
-	if (temp != nullptr) {
-		// make temp (new list's head), not have a prev
-		temp->prev = nullptr; 
-	}
+	slow->prev->next = nullptr;
+	slow->prev = nullptr;
 
 	// return list #2's head
-	return temp;
+	return slow;
 }
 
 
@@ -79,22 +77,26 @@ typename LL<T>::Node* LL<T>::merge(Node* first, Node* second) {
 
 // define mergeSort class
 template <class T>
-typename LL<T>::Node* LL<T>::mergeSort(Node* head) {
+typename LL<T>::Node* LL<T>::mergeSort() {
 	// base call 
 	// if the list has 1 or no nodes
-	if (head == nullptr || head->next == nullptr) {
+	if (this->head == nullptr || this->head->next == nullptr) {
 		return head;
 	}
 
 	// split the list into two
-	Node* newList = split(head);
+	Node* newHead = this->split();
+
+	// make a new list and make newHead the head
+	LL<T> newList;
+	newList.head = newHead;
 
 	// recursive call for each half (splits up lists) 
-	head = mergeSort(head);
-	newList = mergeSort(newList);
+	this->head = mergeSort(head);
+	newList.head = mergeSort(newHead);
 
 	// merge and sort the halves
-	return merge(head, newList);
+	return merge(head, newHead);
 }
 
 int main()

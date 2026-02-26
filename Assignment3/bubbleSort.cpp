@@ -6,41 +6,38 @@ using std::endl;
 
 // define bubble sort function
 template <class T>
-void LL<T>::bubbleSort(LL &list) {
+void LL<T>::bubbleSort() {
 	// if there is one or less nodes
-	if (list.head == nullptr || list.head->next == nullptr) {
+	if (this->head == nullptr || this->head->next == nullptr) {
 		return;
 	}
 
 	// checks if there was a swap
 	bool swapped = true;
-	// used to decrement list check after each go
-	Node* lastSorted = list.tail;
 
 	while (swapped) {
-		// use iterators to traverse list
-		LL<T>::Iterator i(list.head);
-		LL<T>::Iterator j(list.head->next);
-		
 		// make swapped false in case list is sorted
 		swapped = false;
-	
-		// go until iterator j reaches the last sorted node
-		while (j.current != lastSorted->next) {
-			// if data in j is less than data in i
-			if (*j < *i)  {
+
+		// use iterators to traverse list
+		LL<T>::Iterator i(this->head);
+		LL<T>::Iterator j(this->head->next);
+
+		// go until j is nullptr
+		while (j.current != nullptr) {
+			// if data in i is greater than j
+			if (i.current->data > j.current->data)  {
 				// swap nodes
-				list.swap(i,j);
+				swap(j, i);
 				// make swapped true
-				swapped = true;
+				swapped = true;	
 			}
-			// increment iterators 1 node forward
-			i++;
-			j++;
+			// increment iterators
+			++i;
+			++j;
 		}
 
-		// down by one after each loop
-		lastSorted = lastSorted->prev;
+	
 	}
 }
 
@@ -52,7 +49,10 @@ int main()
 	while (cin >> x)
 		list.push_back(x);
 
-	list.bubbleSort(list);
+	list.printList();
+	list.bubbleSort();
+	cout << endl;
+	list.printList();
 
 	return 0;
 }
