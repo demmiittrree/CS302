@@ -34,6 +34,7 @@ void bubbleSort(LL<T>& list) {
 		// use iterators to traverse list
 		typename LL<T>::Iterator i = list.begin();
 		typename LL<T>::Iterator j = list.begin();
+		// make j one ahead of i
 		++j;
 
 		// go until j is nullptr

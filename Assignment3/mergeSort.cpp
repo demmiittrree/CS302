@@ -6,111 +6,77 @@ using std::endl;
 using std::size_t;
 
 template <typename T>
-void printList(typename LL<T>::Node* head) {
-    // use node to traverse list
-    typename LL<T>::Node* current = head;
+void printList(LL<T>& list) {
+	
+	// use iterators to access list, go until end of list
+	for (typename LL<T>::Iterator it = list.begin();
+		it != typename LL<T>::Iterator(nullptr); ++it) {
+			// print value of iterator 
+			cout << *it << " ";
 
-    while (current != nullptr) {
-        cout << current->data << " ";
-        current = current->next;
+	}
+}
+
+// define middle function
+template <typename T>
+typename LL<T>::Iterator middle(typename LL<T>::Iterator begin,
+                                typename LL<T>::Iterator end) {
+    typename LL<T>::Iterator slow = begin;
+    typename LL<T>::Iterator fast = begin;
+    typename LL<T>::Iterator null;  // sentinel for end
+
+    while (fast != end) {
+        ++fast;
+        if (fast == end) break;
+        ++fast;
+        ++slow;
+    }
+
+    return slow;
+}
+
+
+// define merge function
+template <typename T>
+void merge(typename LL<T>::Iterator begin, 
+							typename LL<T>::Iterator end,
+							typename LL<T>::Iterator middle,
+							LL<T>& list) {
+ 	typename LL<T>::Iterator left = begin;
+
+    while (left != middle) {
+        typename LL<T>::Iterator minIt = left;
+        typename LL<T>::Iterator it = middle;
+
+        while (it != end) {
+            if (*it < *minIt) {
+                minIt = it;
+            }
+            ++it;
+        }
+
+        if (*minIt < *left) {
+			list.swap(minIt, left);  // use your existing iterator swap
+        }
+
+        ++left;
     }
 }
 
-// define split class
+// define mergeSort function
 template <typename T>
-typename LL<T>::Node* split(typename LL<T>::Node* head) {
-	// check if there is one or less nodes
-	if (head == nullptr || head->next == nullptr) {
-		return head;
-	}
+void mergeSort(typename LL<T>::Iterator begin,
+                        typename LL<T>::Iterator end,
+                        LL<T>& list) {   // pass list so you can call swap
+	if (begin == end) return;  // empty range
 
-	// create fast node that will reach end of list
-	typename LL<T>::Node* fast = head;
-	// create slow node that will reach middle of the list
-	typename LL<T>::Node* slow = head;
+	typename LL<T>::Iterator mid = middle<T>(begin, end);  // get middle
+	if (mid == begin) return; // single element, stop recursion
 
-	// make fast and slow traverse list
-	while (fast->next != nullptr && fast->next->next != nullptr) {
-		fast = fast->next->next;
-		slow = slow->next;
-	}
+	mergeSort<T>(begin, mid, list);
+	mergeSort<T>(mid, end, list);
 
-	// split
-	// hold node after middle
-	typename LL<T>::Node* temp = slow->next;
-	// make middle node's next point to nothing
-	slow->next = nullptr;
-	// if theres a node after middle node
-	if (temp != nullptr) {
-		// make its previous = null
-		temp->prev = nullptr;
-	}
-
-	// return list #2's head
-	return temp;
-}
-
-
-// define merge class
-template <class T>
-typename LL<T>::Node* merge(typename LL<T>::Node* first, typename LL<T>::Node* second) {
-	// base call 
-	// check if either list has no nodes, if so, return the other
-	if (first == nullptr) {
-		return second;
-	}
-	if (second == nullptr) {
-		return first;
-	}
-
-	// find which node has a smaller value 
-	if (first->data < second->data) {
-		// recursive call to merge lists
-		first->next = merge(first->next, second);
-		// if there is a node in front of first
-		if (first->next != nullptr) {
-			// connect the nodes together
-			first->next->prev = first;
-		}
-		// make sure there's no node before first
-		// since it's the head
-		first->prev = nullptr;
-		return first;
-	} 
-	// if the second list is less than the first
-	else {
-		// recursive call to merge lists
-		second->next = merge(first, second->next);
-		// if there's a node in front of second
-		if (second->next != nullptr) {
-			// connect the nodes together
-			second->next->prev = second;
-		}
-		// make sure there's no nodes before second
-		// since it's the head
-		second->prev = nullptr;
-		return second;
-	}
-}
-
-// define mergeSort class
-template <class T>
-typename LL<T>::Node* mergeSort(typename LL<T>::Node* head) {
-	// base call 
-	// if the list has 1 or no nodes
-	if (head == nullptr || head->next == nullptr) {
-		return head;
-	}
-
-	// split the list into two
-	typename LL<T>::Node* newHead = split(head);
-
-	// recursive call for each half (splits up lists) 
-	head = mergeSort(head);
-	newHead = mergeSort(newHead);
-
-	// merge and sort the halves
-	return merge(head, newHead);
+	merge<T>(begin, end, mid, list); // merge left and right
 }
 
 int main()
@@ -118,27 +84,13 @@ int main()
 	LL<int> list;
 	int x; // x is used to input data value in each node
 	
-	// populate the list
-	while (cin >> x) { // this loop goes until file is done
-		list.push_back(x); // add each node to the end
-	}
+	while (cin >> x)
+		list.push_back(x);
 
-	// merge sort list
-	LL<int>::Node* sortedList = mergeSort<int>(list.head);
-	// make list head equal to the new sorted list, starting from head
-	list.head = sortedList;
-	
-	// fix tail since the order was changed
-	LL<int>::Node* fixTail = list.head;
-	// go to end of list
-	while (fixTail->next != nullptr) {
-		fixTail = fixTail->next;
-	}
-	// update tail
-	list.tail = fixTail;
+	typename LL<int>::Iterator begin = list.begin();
+    typename LL<int>::Iterator null; // sentinel for end
 
-	// print sorted list
-	printList<int>(list.head);
-	
-	return 0;
+    mergeSort<int>(begin, list.end(), list);
+
+    printList<int>(list);
 }
