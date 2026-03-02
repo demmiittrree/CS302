@@ -5,79 +5,125 @@ using std::cout;
 using std::endl;
 using std::size_t;
 
+// implement a print list function to print sorted list
 template <typename T>
 void printList(LL<T>& list) {
-	
 	// use iterators to access list, go until end of list
-	for (typename LL<T>::Iterator it = list.begin();
-		it != typename LL<T>::Iterator(nullptr); ++it) {
+	typename LL<T>::Iterator null;
+    for (typename LL<T>::Iterator it = list.begin();
+		it != null; ++it) {
 			// print value of iterator 
 			cout << *it << " ";
-
-	}
-}
-
-// define middle function
-template <typename T>
-typename LL<T>::Iterator middle(typename LL<T>::Iterator begin,
-                                typename LL<T>::Iterator end) {
-    typename LL<T>::Iterator slow = begin;
-    typename LL<T>::Iterator fast = begin;
-    typename LL<T>::Iterator null;  // sentinel for end
-
-    while (fast != end) {
-        ++fast;
-        if (fast == end) break;
-        ++fast;
-        ++slow;
     }
-
-    return slow;
 }
-
 
 // define merge function
 template <typename T>
-void merge(typename LL<T>::Iterator begin, 
-							typename LL<T>::Iterator end,
-							typename LL<T>::Iterator middle,
-							LL<T>& list) {
- 	typename LL<T>::Iterator left = begin;
+void merge(LL<T>& list, 
+        typename LL<T>::Iterator left, 
+        typename LL<T>::Iterator right, 
+        typename LL<T>::Iterator middle)
+{
+    // create iterator at start of first sublist, and start of second sublist
+    typename LL<T>::Iterator a = left;
+    typename LL<T>::Iterator b = middle;
+    ++b;
 
-    while (left != middle) {
-        typename LL<T>::Iterator minIt = left;
-        typename LL<T>::Iterator it = middle;
+    // use for loop conditions
+    typename LL<T>::Iterator beyondMiddle = middle;
+    ++beyondMiddle;
+    typename LL<T>::Iterator beyondRight = right;
+    ++beyondRight;
+    
+    LL<T> temp;
 
-        while (it != end) {
-            if (*it < *minIt) {
-                minIt = it;
-            }
-            ++it;
+    // go until one goes beyond their bound
+    while (a != beyondMiddle && b != beyondRight) {    
+        if (*a <= *b) {
+            temp.push_back(*a);
+            ++a;
+        } else {
+            temp.push_back(*b);
+            ++b;
         }
+    }
 
-        if (*minIt < *left) {
-			list.swap(minIt, left);  // use your existing iterator swap
-        }
+    // remaining elements
+    while (a != beyondMiddle) {
+        temp.push_back(*a);
+        ++a;
+    }
+    while (b != beyondRight) {
+        temp.push_back(*b);
+        ++b;
+    }
 
-        ++left;
+    printList(temp);
+    cout << endl;
+    // need to copy the values of temp into list
+    // AT range of left to right
+    
+    // start of range in original list
+    typename LL<T>::Iterator i = left;
+    // start of range in sub list
+    typename LL<T>::Iterator j = temp.begin();
+
+    // while i doesn't go out of range
+    while (i != beyondRight) {
+        // insert sorted node
+        list.insertNode(i, *j);
+        ++j; // increment j to next node
+
+        list.removeNode(i);
+        ++i;
     }
 }
 
 // define mergeSort function
 template <typename T>
-void mergeSort(typename LL<T>::Iterator begin,
-                        typename LL<T>::Iterator end,
-                        LL<T>& list) {   // pass list so you can call swap
-	if (begin == end) return;  // empty range
+void mergeSort(LL<T>& list, 
+                typename LL<T>::Iterator left, 
+                typename LL<T>::Iterator right) 
+{
+    // if theres only one node in a sublist
+    if (left == right) {
+        return;
+    }
+    
+    // first, find the node AFTER middle 
+    
+    typename LL<T>::Iterator temp = left; // use temp to go through list
+    
+    int count = 1; // count is ALLOWED here because the video said so haha
+    
+    // traverse list until end
+    while (temp != right) {
+        ++count;
+        ++temp;
+    }
 
-	typename LL<T>::Iterator mid = middle<T>(begin, end);  // get middle
-	if (mid == begin) return; // single element, stop recursion
+    // find middle index
+    int middleCount = count/2;
+    // reset variables
+    temp = left; 
+    
+    for (int i = 0; i < middleCount; ++i) {
+        ++temp;
+    }
+    
+    typename LL<T>::Iterator middle = temp;
+    typename LL<T>::Iterator rightStart = middle;
+    ++rightStart;
 
-	mergeSort<T>(begin, mid, list);
-	mergeSort<T>(mid, end, list);
-
-	merge<T>(begin, end, mid, list); // merge left and right
+    // merge sort LEFTmost 
+    mergeSort(list, left, middle);
+    //merge sort RIGHTmost
+    mergeSort(list, rightStart, right);
+  
+    // implement merge
+    merge(list, left, right, temp);
 }
+
 
 int main()
 {
@@ -87,10 +133,8 @@ int main()
 	while (cin >> x)
 		list.push_back(x);
 
-	typename LL<int>::Iterator begin = list.begin();
-    typename LL<int>::Iterator null; // sentinel for end
-
-    mergeSort<int>(begin, list.end(), list);
-
-    printList<int>(list);
+    typename LL<int>::Iterator left = list.begin();
+    typename LL<int>::Iterator right = list.end();
+    mergeSort(list, left, right);
+    printList(list);
 }
