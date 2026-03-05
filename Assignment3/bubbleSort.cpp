@@ -4,6 +4,8 @@ using std::cin;
 using std::cout;
 using std::endl;
 
+long long comparisonCount = 0;
+
 // implement a printList function to print sorted list
 template <typename T>
 void printList(LL<T>& list) {
@@ -39,6 +41,7 @@ void bubbleSort(LL<T>& list) {
 		// go until j is nullptr
 		while (j != nullptr) {
 			// if data in i is greater than j
+			++comparisonCount;
 			if (*i > *j)  {
 				// swap nodes
 				list.swap(j,i);
@@ -61,7 +64,6 @@ int main()
 		list.push_back(x);
 
 	bubbleSort(list);
-	printList(list);
-
+	
 	return 0;
 }

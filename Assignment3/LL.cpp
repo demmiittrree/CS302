@@ -258,107 +258,15 @@ void LL<T>::insertNode(const LL<T>::Iterator& it, const T& item)
 template <class T>
 void LL<T>::swap(LL<T>::Iterator& i, LL<T>::Iterator& j)
 {
-    // make sure not swapping same nodes
-    if (i.current == j.current) {
-        return;
-    }
-    // make sure not null
-    if (i.current == nullptr || j.current == nullptr) {
-        return;
-    }
-
-    // if i -> j
-    if (i.current->next == j.current) {
-        // check if i is the head
-        if (i.current->prev) {
-            i.current->prev->next = j.current;
-        } else {
-            head = j.current;
-        }
-        // check if j is the tail
-        if (j.current->next) {
-            j.current->next->prev = i.current;
-        } else {
-            tail = i.current;
-        }
-
-        // swap adjacent i->j
-        i.current->next = j.current->next;
-        j.current->prev = i.current->prev;
-        i.current->prev = j.current;
-        j.current->next = i.current;
-    }
-
-    // if j -> i
-    if (j.current->next == i.current) {
-        // check if j is the head
-        if (j.current->prev) {
-            j.current->prev->next = i.current;
-        } else {
-            head = i.current;
-        }
-        // check if i is the tail
-        if (i.current->next) {
-            i.current->next->prev = j.current;
-        } else {
-            tail = j.current;
-        }
-
-        // swap adjacent i->j
-        j.current->next = i.current->next;
-        i.current->prev = j.current->prev;
-        j.current->prev = i.current;
-        i.current->next = j.current;
-    }
-
-    // if nodes are NOT adjacent
-    if (i.current->next != j.current && j.current->next != i.current) {
-         // save i and j's next and prev
-        Node* iPrev = i.current->prev;
-        Node* iNext = i.current->next;
-        Node* jPrev = j.current->prev;
-        Node* jNext = j.current->next;
-        
-        // check if i is the head
-        if (iPrev) {
-            iPrev->next = j.current;
-        } else {
-            head = j.current;
-        }
-        // check if i is the tail
-        if (iNext) {
-            iNext->prev = j.current;
-        } else {
-            tail = j.current;
-        }
-        // check if j is the head
-        if (jPrev) {
-            jPrev->next = i.current;
-        } else {
-            head = i.current;
-        }
-        // check if j is the tail
-        if (jNext) {
-            jNext->prev = i.current;
-        } else {
-            tail = i.current;
-        }
-        
-        // swap their next and prevs
-        i.current->prev = jPrev;
-        i.current->next = jNext;
-        j.current->prev = iPrev;
-        j.current->next = iNext;
-    }
-
-    // swap iterators
-    Node* temp = i.current;
-    i.current = j.current;
-    j.current = temp;
+    T tmp = i.current->data ;
+    i.current->data = j.current->data ;
+    j.current-> data = tmp ;
 }
 
 
+/*
 
+*/
 
 template class LL<int>;
 template class LL<std::string>;
