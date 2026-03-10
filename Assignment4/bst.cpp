@@ -85,7 +85,27 @@ t2 bst<t1, t2>::getValue(binTreeNode * r, t1 k)
 template <class t1, class t2>
 string bst<t1, t2>::getPath(t1 k)
 {
-    
+    // create string path
+    string path = "";
+    // node starting from root, find node with value k
+    binTreeNode* findPath = root;
+    while (findPath->key != k) {
+        if (k < findPath->key) {
+            path += "L"; // add L if going left in path
+            findPath = findPath->left;
+        } else if (k > findPath->key) {
+            path += "R"; // ad R if going right in path
+            findPath = findPath->right;
+        }
+    }
+
+    // if root matches k
+    if (root->key == k) {
+        path += "S";
+    }
+
+    // return final path
+    return path;
 }
 
 template class bst<char, std::string>;
