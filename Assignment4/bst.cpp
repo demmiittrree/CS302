@@ -1,6 +1,7 @@
 #include "bst.h"
 using std::string;
-
+using namespace std;
+#include <iostream>
 template <class t1, class t2>
 // takes in root, call recursively to delete tree
 void bst<t1, t2>::deallocateTree(binTreeNode * r)
@@ -70,9 +71,14 @@ template <class t1, class t2>
 t2 bst<t1, t2>::getValue(binTreeNode * r, t1 k)
 {
     // once at the right key
+    if (r == nullptr) {
+        cout << "error";
+        return t2();
+    }
     if (r->key == k) {
         return r->value;
     }
+    
 
     // recursively look for node with key == k
     if (k < r->key) {
