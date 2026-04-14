@@ -1,0 +1,91 @@
+KrustyKrab.csv
+Coral Bits
+24
+N
+Kelp Shake
+20
+N
+Buttered Barnacle
+10
+N
+Crunchy Kelp Dog
+7
+N
+Pizza
+1
+N
+Small Coral Bits
+11
+N
+Kelp Rings
+5
+N
+Fresh Sludge Pudding
+9
+N
+Sailors Surprise
+10
+N
+Small Seafoam Soda
+15
+N
+Double Triple Bossy Deluxe
+13
+N
+Salty Sauce
+30
+N
+Krabby Patty
+50
+N
+Adult Sized Krabby Patty
+5
+N
+Diet DrKelp
+20
+N
+Double Fried Kelp Fritter
+9
+N
+Salty SeaDog
+19
+N
+Kelp Bits
+20
+N
+Seaweed Salad
+15
+N
+Krabby Newburg
+5
+N
+Fried Flotsam
+10
+N
+Captain Olaf's Special
+20
+N
+French Fries
+20
+N
+Golden Loaf
+17
+N
+Crying Johnny
+11
+N
+Monster Krabby Patty
+16
+N
+Pipsqueak Patty
+8
+N
+Fried Oyster Skins
+13
+N
+Powdered Driftwood
+13
+N
+Crunchy Kelp Dog
+7
+N

@@ -1,0 +1,28 @@
+KrustyKrab.csv
+Kelp Shake
+3
+N
+Pepsi
+Cola
+Fries
+Double-Double
+Double-Double-Animal-Style
+Big
+Mac
+Crying Johnny
+10
+N
+Onion Rings
+McRib
+Whopper
+Hook And Ladder
+Capastrami
+The Bobby
+Coney Island HotDog
+Krabby Patty Delux
+Golden Loaf
+10
+N
+Salty SeaDog
+1
+Y

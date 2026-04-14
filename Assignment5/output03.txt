@@ -1,0 +1,672 @@
+
+Enter Krusty Krab Menu: KrustyKrab.csv
+
+Fried Oyster Skins                           14.99        13
+Kelp Shake                                    1.99        20
+Krabby Patty                                  5.25        50
+Buttered Barnacle                             7.99        10
+Crunchy Kelp Dog                              5.99         7
+Fresh Sludge Pudding                          2.99         9
+Pizza                                        12.99         1
+Small Coral Bits                              1.99        11
+Kelp Rings                                    2.50         5
+Sailors Surprise                             60.00        10
+Small Seafoam Soda                            1.99        15
+Salty Sauce                                   0.95        30
+Adult Sized Krabby Patty                      7.25         5
+Coral Bits                                    1.19        24
+Diet DrKelp                                   2.99        20
+Double Fried Kelp Fritter                     6.25         9
+Kelp Bits                                     1.29        20
+Seaweed Salad                                 5.60        15
+Krabby Newburg                               39.99         5
+Salty Seadog                                  2.50        19
+Fried Flotsam                                 4.59        10
+Captain Olaf's Special                       13.29        20
+French Fries                                  1.59        20
+Golden Loaf                                  10.99        17
+Double Triple Bossy Deluxe                    9.99        13
+Crying Johnny                                11.99        11
+Monster Krabby Patty                          8.99        16
+Pipsqueak Patty                               0.99         8
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Coral Bits
+
+How much of this stuff do you want? 24
+
+
+Will this complete your order...barnaclehead? N
+
+Fried Oyster Skins                           14.99        13
+Kelp Shake                                    1.99        20
+Krabby Patty                                  5.25        50
+Buttered Barnacle                             7.99        10
+Crunchy Kelp Dog                              5.99         7
+Fresh Sludge Pudding                          2.99         9
+Pizza                                        12.99         1
+Small Coral Bits                              1.99        11
+Kelp Rings                                    2.50         5
+Sailors Surprise                             60.00        10
+Small Seafoam Soda                            1.99        15
+Salty Sauce                                   0.95        30
+Adult Sized Krabby Patty                      7.25         5
+Diet DrKelp                                   2.99        20
+Double Fried Kelp Fritter                     6.25         9
+Kelp Bits                                     1.29        20
+Seaweed Salad                                 5.60        15
+Krabby Newburg                               39.99         5
+Salty Seadog                                  2.50        19
+Fried Flotsam                                 4.59        10
+Captain Olaf's Special                       13.29        20
+French Fries                                  1.59        20
+Golden Loaf                                  10.99        17
+Double Triple Bossy Deluxe                    9.99        13
+Crying Johnny                                11.99        11
+Monster Krabby Patty                          8.99        16
+Pipsqueak Patty                               0.99         8
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Kelp Shake
+
+How much of this stuff do you want? 20
+
+
+Will this complete your order...barnaclehead? N
+
+Fried Oyster Skins                           14.99        13
+Krabby Patty                                  5.25        50
+Buttered Barnacle                             7.99        10
+Crunchy Kelp Dog                              5.99         7
+Fresh Sludge Pudding                          2.99         9
+Pizza                                        12.99         1
+Small Coral Bits                              1.99        11
+Kelp Rings                                    2.50         5
+Sailors Surprise                             60.00        10
+Small Seafoam Soda                            1.99        15
+Salty Sauce                                   0.95        30
+Adult Sized Krabby Patty                      7.25         5
+Diet DrKelp                                   2.99        20
+Double Fried Kelp Fritter                     6.25         9
+Kelp Bits                                     1.29        20
+Seaweed Salad                                 5.60        15
+Krabby Newburg                               39.99         5
+Salty Seadog                                  2.50        19
+Fried Flotsam                                 4.59        10
+Captain Olaf's Special                       13.29        20
+French Fries                                  1.59        20
+Golden Loaf                                  10.99        17
+Double Triple Bossy Deluxe                    9.99        13
+Crying Johnny                                11.99        11
+Monster Krabby Patty                          8.99        16
+Pipsqueak Patty                               0.99         8
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Buttered Barnacle
+
+How much of this stuff do you want? 10
+
+
+Will this complete your order...barnaclehead? N
+
+Fried Oyster Skins                           14.99        13
+Krabby Patty                                  5.25        50
+Crunchy Kelp Dog                              5.99         7
+Fresh Sludge Pudding                          2.99         9
+Pizza                                        12.99         1
+Small Coral Bits                              1.99        11
+Kelp Rings                                    2.50         5
+Sailors Surprise                             60.00        10
+Small Seafoam Soda                            1.99        15
+Salty Sauce                                   0.95        30
+Adult Sized Krabby Patty                      7.25         5
+Diet DrKelp                                   2.99        20
+Double Fried Kelp Fritter                     6.25         9
+Kelp Bits                                     1.29        20
+Seaweed Salad                                 5.60        15
+Krabby Newburg                               39.99         5
+Salty Seadog                                  2.50        19
+Fried Flotsam                                 4.59        10
+Captain Olaf's Special                       13.29        20
+French Fries                                  1.59        20
+Golden Loaf                                  10.99        17
+Double Triple Bossy Deluxe                    9.99        13
+Crying Johnny                                11.99        11
+Monster Krabby Patty                          8.99        16
+Pipsqueak Patty                               0.99         8
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Crunchy Kelp Dog
+
+How much of this stuff do you want? 7
+
+
+Will this complete your order...barnaclehead? N
+
+Fried Oyster Skins                           14.99        13
+Krabby Patty                                  5.25        50
+Fresh Sludge Pudding                          2.99         9
+Pizza                                        12.99         1
+Small Coral Bits                              1.99        11
+Kelp Rings                                    2.50         5
+Sailors Surprise                             60.00        10
+Small Seafoam Soda                            1.99        15
+Salty Sauce                                   0.95        30
+Adult Sized Krabby Patty                      7.25         5
+Diet DrKelp                                   2.99        20
+Double Fried Kelp Fritter                     6.25         9
+Kelp Bits                                     1.29        20
+Seaweed Salad                                 5.60        15
+Krabby Newburg                               39.99         5
+Salty Seadog                                  2.50        19
+Fried Flotsam                                 4.59        10
+Captain Olaf's Special                       13.29        20
+French Fries                                  1.59        20
+Golden Loaf                                  10.99        17
+Double Triple Bossy Deluxe                    9.99        13
+Crying Johnny                                11.99        11
+Monster Krabby Patty                          8.99        16
+Pipsqueak Patty                               0.99         8
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Pizza
+
+How much of this stuff do you want? 1
+
+
+Will this complete your order...barnaclehead? N
+
+Fried Oyster Skins                           14.99        13
+Krabby Patty                                  5.25        50
+Fresh Sludge Pudding                          2.99         9
+Small Coral Bits                              1.99        11
+Kelp Rings                                    2.50         5
+Sailors Surprise                             60.00        10
+Small Seafoam Soda                            1.99        15
+Salty Sauce                                   0.95        30
+Adult Sized Krabby Patty                      7.25         5
+Diet DrKelp                                   2.99        20
+Double Fried Kelp Fritter                     6.25         9
+Kelp Bits                                     1.29        20
+Seaweed Salad                                 5.60        15
+Krabby Newburg                               39.99         5
+Salty Seadog                                  2.50        19
+Fried Flotsam                                 4.59        10
+Captain Olaf's Special                       13.29        20
+French Fries                                  1.59        20
+Golden Loaf                                  10.99        17
+Double Triple Bossy Deluxe                    9.99        13
+Crying Johnny                                11.99        11
+Monster Krabby Patty                          8.99        16
+Pipsqueak Patty                               0.99         8
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Small Coral Bits
+
+How much of this stuff do you want? 11
+
+
+Will this complete your order...barnaclehead? N
+
+Fried Oyster Skins                           14.99        13
+Krabby Patty                                  5.25        50
+Fresh Sludge Pudding                          2.99         9
+Kelp Rings                                    2.50         5
+Sailors Surprise                             60.00        10
+Small Seafoam Soda                            1.99        15
+Salty Sauce                                   0.95        30
+Adult Sized Krabby Patty                      7.25         5
+Diet DrKelp                                   2.99        20
+Double Fried Kelp Fritter                     6.25         9
+Kelp Bits                                     1.29        20
+Seaweed Salad                                 5.60        15
+Krabby Newburg                               39.99         5
+Salty Seadog                                  2.50        19
+Fried Flotsam                                 4.59        10
+Captain Olaf's Special                       13.29        20
+French Fries                                  1.59        20
+Golden Loaf                                  10.99        17
+Double Triple Bossy Deluxe                    9.99        13
+Crying Johnny                                11.99        11
+Monster Krabby Patty                          8.99        16
+Pipsqueak Patty                               0.99         8
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Kelp Rings
+
+How much of this stuff do you want? 5
+
+
+Will this complete your order...barnaclehead? N
+
+Fried Oyster Skins                           14.99        13
+Krabby Patty                                  5.25        50
+Fresh Sludge Pudding                          2.99         9
+Sailors Surprise                             60.00        10
+Small Seafoam Soda                            1.99        15
+Salty Sauce                                   0.95        30
+Adult Sized Krabby Patty                      7.25         5
+Diet DrKelp                                   2.99        20
+Double Fried Kelp Fritter                     6.25         9
+Kelp Bits                                     1.29        20
+Seaweed Salad                                 5.60        15
+Krabby Newburg                               39.99         5
+Salty Seadog                                  2.50        19
+Fried Flotsam                                 4.59        10
+Captain Olaf's Special                       13.29        20
+French Fries                                  1.59        20
+Golden Loaf                                  10.99        17
+Double Triple Bossy Deluxe                    9.99        13
+Crying Johnny                                11.99        11
+Monster Krabby Patty                          8.99        16
+Pipsqueak Patty                               0.99         8
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Fresh Sludge Pudding
+
+How much of this stuff do you want? 9
+
+
+Will this complete your order...barnaclehead? N
+
+Fried Oyster Skins                           14.99        13
+Krabby Patty                                  5.25        50
+Sailors Surprise                             60.00        10
+Small Seafoam Soda                            1.99        15
+Salty Sauce                                   0.95        30
+Adult Sized Krabby Patty                      7.25         5
+Diet DrKelp                                   2.99        20
+Double Fried Kelp Fritter                     6.25         9
+Kelp Bits                                     1.29        20
+Seaweed Salad                                 5.60        15
+Krabby Newburg                               39.99         5
+Salty Seadog                                  2.50        19
+Fried Flotsam                                 4.59        10
+Captain Olaf's Special                       13.29        20
+French Fries                                  1.59        20
+Golden Loaf                                  10.99        17
+Double Triple Bossy Deluxe                    9.99        13
+Crying Johnny                                11.99        11
+Monster Krabby Patty                          8.99        16
+Pipsqueak Patty                               0.99         8
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Sailors Surprise
+
+How much of this stuff do you want? 10
+
+
+Will this complete your order...barnaclehead? N
+
+Fried Oyster Skins                           14.99        13
+Krabby Patty                                  5.25        50
+Small Seafoam Soda                            1.99        15
+Salty Sauce                                   0.95        30
+Adult Sized Krabby Patty                      7.25         5
+Diet DrKelp                                   2.99        20
+Double Fried Kelp Fritter                     6.25         9
+Kelp Bits                                     1.29        20
+Seaweed Salad                                 5.60        15
+Krabby Newburg                               39.99         5
+Salty Seadog                                  2.50        19
+Fried Flotsam                                 4.59        10
+Captain Olaf's Special                       13.29        20
+French Fries                                  1.59        20
+Golden Loaf                                  10.99        17
+Double Triple Bossy Deluxe                    9.99        13
+Crying Johnny                                11.99        11
+Monster Krabby Patty                          8.99        16
+Pipsqueak Patty                               0.99         8
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Small Seafoam Soda
+
+How much of this stuff do you want? 15
+
+
+Will this complete your order...barnaclehead? N
+
+Fried Oyster Skins                           14.99        13
+Krabby Patty                                  5.25        50
+Salty Sauce                                   0.95        30
+Adult Sized Krabby Patty                      7.25         5
+Diet DrKelp                                   2.99        20
+Double Fried Kelp Fritter                     6.25         9
+Kelp Bits                                     1.29        20
+Seaweed Salad                                 5.60        15
+Krabby Newburg                               39.99         5
+Salty Seadog                                  2.50        19
+Fried Flotsam                                 4.59        10
+Captain Olaf's Special                       13.29        20
+French Fries                                  1.59        20
+Golden Loaf                                  10.99        17
+Double Triple Bossy Deluxe                    9.99        13
+Crying Johnny                                11.99        11
+Monster Krabby Patty                          8.99        16
+Pipsqueak Patty                               0.99         8
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Double Triple Bossy Deluxe
+
+How much of this stuff do you want? 13
+
+
+Will this complete your order...barnaclehead? N
+
+Fried Oyster Skins                           14.99        13
+Krabby Patty                                  5.25        50
+Salty Sauce                                   0.95        30
+Adult Sized Krabby Patty                      7.25         5
+Diet DrKelp                                   2.99        20
+Double Fried Kelp Fritter                     6.25         9
+Kelp Bits                                     1.29        20
+Seaweed Salad                                 5.60        15
+Krabby Newburg                               39.99         5
+Salty Seadog                                  2.50        19
+Fried Flotsam                                 4.59        10
+Captain Olaf's Special                       13.29        20
+French Fries                                  1.59        20
+Golden Loaf                                  10.99        17
+Crying Johnny                                11.99        11
+Monster Krabby Patty                          8.99        16
+Pipsqueak Patty                               0.99         8
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Salty Sauce
+
+How much of this stuff do you want? 30
+
+
+Will this complete your order...barnaclehead? N
+
+Fried Oyster Skins                           14.99        13
+Krabby Patty                                  5.25        50
+Adult Sized Krabby Patty                      7.25         5
+Diet DrKelp                                   2.99        20
+Double Fried Kelp Fritter                     6.25         9
+Kelp Bits                                     1.29        20
+Seaweed Salad                                 5.60        15
+Krabby Newburg                               39.99         5
+Salty Seadog                                  2.50        19
+Fried Flotsam                                 4.59        10
+Captain Olaf's Special                       13.29        20
+French Fries                                  1.59        20
+Golden Loaf                                  10.99        17
+Crying Johnny                                11.99        11
+Monster Krabby Patty                          8.99        16
+Pipsqueak Patty                               0.99         8
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Krabby Patty
+
+How much of this stuff do you want? 50
+
+
+Will this complete your order...barnaclehead? N
+
+Fried Oyster Skins                           14.99        13
+Adult Sized Krabby Patty                      7.25         5
+Diet DrKelp                                   2.99        20
+Double Fried Kelp Fritter                     6.25         9
+Kelp Bits                                     1.29        20
+Seaweed Salad                                 5.60        15
+Krabby Newburg                               39.99         5
+Salty Seadog                                  2.50        19
+Fried Flotsam                                 4.59        10
+Captain Olaf's Special                       13.29        20
+French Fries                                  1.59        20
+Golden Loaf                                  10.99        17
+Crying Johnny                                11.99        11
+Monster Krabby Patty                          8.99        16
+Pipsqueak Patty                               0.99         8
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Adult Sized Krabby Patty
+
+How much of this stuff do you want? 5
+
+
+Will this complete your order...barnaclehead? N
+
+Fried Oyster Skins                           14.99        13
+Diet DrKelp                                   2.99        20
+Double Fried Kelp Fritter                     6.25         9
+Kelp Bits                                     1.29        20
+Seaweed Salad                                 5.60        15
+Krabby Newburg                               39.99         5
+Salty Seadog                                  2.50        19
+Fried Flotsam                                 4.59        10
+Captain Olaf's Special                       13.29        20
+French Fries                                  1.59        20
+Golden Loaf                                  10.99        17
+Crying Johnny                                11.99        11
+Monster Krabby Patty                          8.99        16
+Pipsqueak Patty                               0.99         8
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Diet DrKelp
+
+How much of this stuff do you want? 20
+
+
+Will this complete your order...barnaclehead? N
+
+Fried Oyster Skins                           14.99        13
+Double Fried Kelp Fritter                     6.25         9
+Kelp Bits                                     1.29        20
+Seaweed Salad                                 5.60        15
+Krabby Newburg                               39.99         5
+Salty Seadog                                  2.50        19
+Fried Flotsam                                 4.59        10
+Captain Olaf's Special                       13.29        20
+French Fries                                  1.59        20
+Golden Loaf                                  10.99        17
+Crying Johnny                                11.99        11
+Monster Krabby Patty                          8.99        16
+Pipsqueak Patty                               0.99         8
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Double Fried Kelp Fritter
+
+How much of this stuff do you want? 9
+
+
+Will this complete your order...barnaclehead? N
+
+Fried Oyster Skins                           14.99        13
+Kelp Bits                                     1.29        20
+Seaweed Salad                                 5.60        15
+Krabby Newburg                               39.99         5
+Salty Seadog                                  2.50        19
+Fried Flotsam                                 4.59        10
+Captain Olaf's Special                       13.29        20
+French Fries                                  1.59        20
+Golden Loaf                                  10.99        17
+Crying Johnny                                11.99        11
+Monster Krabby Patty                          8.99        16
+Pipsqueak Patty                               0.99         8
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Salty SeaDog
+
+How much of this stuff do you want? 19
+
+
+Will this complete your order...barnaclehead? N
+
+Fried Oyster Skins                           14.99        13
+Kelp Bits                                     1.29        20
+Seaweed Salad                                 5.60        15
+Krabby Newburg                               39.99         5
+Fried Flotsam                                 4.59        10
+Captain Olaf's Special                       13.29        20
+French Fries                                  1.59        20
+Golden Loaf                                  10.99        17
+Crying Johnny                                11.99        11
+Monster Krabby Patty                          8.99        16
+Pipsqueak Patty                               0.99         8
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Kelp Bits
+
+How much of this stuff do you want? 20
+
+
+Will this complete your order...barnaclehead? N
+
+Fried Oyster Skins                           14.99        13
+Seaweed Salad                                 5.60        15
+Krabby Newburg                               39.99         5
+Fried Flotsam                                 4.59        10
+Captain Olaf's Special                       13.29        20
+French Fries                                  1.59        20
+Golden Loaf                                  10.99        17
+Crying Johnny                                11.99        11
+Monster Krabby Patty                          8.99        16
+Pipsqueak Patty                               0.99         8
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Seaweed Salad
+
+How much of this stuff do you want? 15
+
+
+Will this complete your order...barnaclehead? N
+
+Fried Oyster Skins                           14.99        13
+Krabby Newburg                               39.99         5
+Fried Flotsam                                 4.59        10
+Captain Olaf's Special                       13.29        20
+French Fries                                  1.59        20
+Golden Loaf                                  10.99        17
+Crying Johnny                                11.99        11
+Monster Krabby Patty                          8.99        16
+Pipsqueak Patty                               0.99         8
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Krabby Newburg
+
+How much of this stuff do you want? 5
+
+
+Will this complete your order...barnaclehead? N
+
+Fried Oyster Skins                           14.99        13
+Fried Flotsam                                 4.59        10
+Captain Olaf's Special                       13.29        20
+French Fries                                  1.59        20
+Golden Loaf                                  10.99        17
+Crying Johnny                                11.99        11
+Monster Krabby Patty                          8.99        16
+Pipsqueak Patty                               0.99         8
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Fried Flotsam
+
+How much of this stuff do you want? 10
+
+
+Will this complete your order...barnaclehead? N
+
+Fried Oyster Skins                           14.99        13
+Captain Olaf's Special                       13.29        20
+French Fries                                  1.59        20
+Golden Loaf                                  10.99        17
+Crying Johnny                                11.99        11
+Monster Krabby Patty                          8.99        16
+Pipsqueak Patty                               0.99         8
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Captain Olaf's Special
+
+How much of this stuff do you want? 20
+
+
+Will this complete your order...barnaclehead? N
+
+Fried Oyster Skins                           14.99        13
+French Fries                                  1.59        20
+Golden Loaf                                  10.99        17
+Crying Johnny                                11.99        11
+Monster Krabby Patty                          8.99        16
+Pipsqueak Patty                               0.99         8
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: French Fries
+
+How much of this stuff do you want? 20
+
+
+Will this complete your order...barnaclehead? N
+
+Fried Oyster Skins                           14.99        13
+Golden Loaf                                  10.99        17
+Crying Johnny                                11.99        11
+Monster Krabby Patty                          8.99        16
+Pipsqueak Patty                               0.99         8
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Golden Loaf
+
+How much of this stuff do you want? 17
+
+
+Will this complete your order...barnaclehead? N
+
+Fried Oyster Skins                           14.99        13
+Crying Johnny                                11.99        11
+Monster Krabby Patty                          8.99        16
+Pipsqueak Patty                               0.99         8
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Crying Johnny
+
+How much of this stuff do you want? 11
+
+
+Will this complete your order...barnaclehead? N
+
+Fried Oyster Skins                           14.99        13
+Monster Krabby Patty                          8.99        16
+Pipsqueak Patty                               0.99         8
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Monster Krabby Patty
+
+How much of this stuff do you want? 16
+
+
+Will this complete your order...barnaclehead? N
+
+Fried Oyster Skins                           14.99        13
+Pipsqueak Patty                               0.99         8
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Pipsqueak Patty
+
+How much of this stuff do you want? 8
+
+
+Will this complete your order...barnaclehead? N
+
+Fried Oyster Skins                           14.99        13
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Fried Oyster Skins
+
+How much of this stuff do you want? 13
+
+
+Will this complete your order...barnaclehead? N
+
+Powdered Driftwood                            5.99        13
+
+Hurry up and order something: Powdered Driftwood
+
+How much of this stuff do you want? 13
+
+
+Will this complete your order...barnaclehead? N
+
+
+Order Total 2911.47
