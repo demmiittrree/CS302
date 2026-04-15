@@ -77,12 +77,54 @@ template <class t1, class t2>
 void hashMap<t1, t2>::resize(size_t amount)
 {
     // resize capacity
+    std::size_t oldCapacity = capacity;
     capacity *= amount;
 
-    
-    node** temp1 = new node*[capacity];
-    node** temp2 = new node*[capacity];
+    // save pointer to old tables
+    node** old1 = table1;
+    node** old2 = table2;
 
+    // have old pointers point to bigger tables
+    table1 = new node*[capacity];
+    table2 = new node*[capacity];
+    
+    // set each element of new tables with nullptr
+    for (std::size_t i = 0 ; i < capacity ; ++i) {
+        table1[i] = nullptr;
+        table2[i] = nullptr;
+    }
+
+    // reset amount of items in tables
+    items1 = 0;
+    items2 = 0;
+
+    // go through old table1 and insert all elements into new tables
+    for (int i = 0 ; i < oldCapacity ; ++i) {
+        // if the slot is not empty
+        if (old1[i] != nullptr) {
+            insert(old1[i]->key, old1[i]->value);
+        }
+    }
+
+    // go through old table2 and insert all elements into new tables
+    for (int i = 0 ; i < oldCapacity ; ++i) {
+        // if the slot is not empty
+        if (old2[i] != nullptr) {
+            insert(old2[i]->key, old2[i]->value);
+        }
+    }
+
+    // delete the old tables
+    for (std::size_t i = 0 ; i < oldCapacity ; ++i) {
+        delete old1[i];
+    }
+    for (std::size_t i = 0 ; i < oldCapacity ; ++i) {
+        delete old2[i];
+    }
+    
+    // deallocate table 1 and table 2
+    delete[] old1;
+    delete[] old2;
 }
 
 template <class t1, class t2>
@@ -95,34 +137,27 @@ size_t hashMap<t1, t2>::lookup(t1 k)
     while (true) {
         std::size_t index = (hash1(k) + i * hash2(k)) % capacity;
     
-        // check table1 for vacant or match
-
-        // if the location is vacant, return the index,
+        // check table1 for a match
+        if (table1[index] != nullptr && table1[index]->key == k) {
+            return index;
+        }
+        // check table2 for a match
+        if (table2[index] != nullptr && table2[index]->key == k) {
+            return index;
+        }
+        // check table1 for empty slot
         if (table1[index] == nullptr) {
             return index;
         }
-        // if this location is not vacant but the node in this location has a matching key, 
-        // return the index.
-        if (table1[index]->key == k) {
-            return index;
-        }
-
-        // check table 2 for vacant or match
-
-        // if the location is vacant, return the index,
+        // check table2 for empty slot
         if (table2[index] == nullptr) {
             return index;
         }
-        // if this location is not vacant but the node in this location has a matching key, 
-        // return the index.
-        if (table2[index]->key == k) {
-            return index;
-        }
-
-        // if there's no match
+        
+        // if there's no match or empty slot
         ++i;
 
-        // if there is no slots available at all
+        // just in case there's no possible matches at all
         if (i >= capacity) {
             return capacity;
         }
@@ -162,57 +197,72 @@ void hashMap<t1, t2>::insert(t1 k, t2 v)
     // create new node with k and v
     node* insert = new node(k, v);
     
-    for (std::size_t i = 0 ; i < capacity ; ++i) {
-        // location in table 1
-        std::size_t location1 = hash1(k);
-        // if location is not taken
-        if (table1[location1] == nullptr) {
-            // assign at location
-            table1[location1] = insert;
-            // increment count of items in t1
-            ++items1;
+    // find index of where to insert node
+    std::size_t index = lookup(k);
 
-            return;
-        }
-
-        // if location was taken
-        
-        // keep info on node being kicked
-        node* temp = table1[location1];
-        // replace kicked node with inserted node
-        table1[location1] = insert;
-        // prepare to insert kicked node into t2
-        insert = temp;
-
-        // location in table 2
-        std::size_t location2 = hash2(insert->key);
-        if (table2[location2] == nullptr) {
-            table2[location2] = insert;
-            ++items2;
-            return;
-        }
-
-        // if location is taken in t2
-        
+    // if index was for table 1
+    if (table1[index] == nullptr) {
+        // insert node at index in t1
+        table1[index] = insert;
+        ++items1;
+    } 
+    // if index was for table 2
+    else if (table1[index] != nullptr && table2[index] == nullptr) 
+    {
+        // insert node at index in t2
+        table2[index] = insert;
+        ++items2;
     }
 
-    
 }
-
-    
-    
-    
 
 template <class t1, class t2>
 void hashMap<t1, t2>::update(t1 k, t2 v)
 {
+    // find index of the key
+    std::size_t index = lookup(k);
 
+    // check if invalid index
+    if (index == capacity) {
+        return;
+    }
+
+    // if index was for table 1
+    if (table1[index]->key == k) {
+        table1[index]->value = v;
+    } 
+    // if index was for table 2
+    else if (table1[index]->key != k && table2[index]->key == k) 
+    {
+        table2[index]->value = v;
+    }
+    
 }
 
 template <class t1, class t2>
 t2 hashMap<t1, t2>::getValue(t1 k)
 {
-	
+	// find index of the key
+    std::size_t index = lookup(k);
+
+    // checks if out of bounds
+    if (index == capacity) {
+        return t2{};
+    }
+
+    // if index was for table 1
+    if (table1[index]->key == k) {
+        // insert node at index in t1
+        return table1[index]->value;
+    } 
+    // if index was for table 2
+    else if (table1[index]->key != k && table2[index]->key == k) 
+    {
+        // insert node at index in t2
+        return table2[index]->value;
+    }
+
+    return t2{};
 }
 
 
