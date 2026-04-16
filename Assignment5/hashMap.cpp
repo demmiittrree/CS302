@@ -168,14 +168,28 @@ size_t hashMap<t1, t2>::lookup(t1 k)
 template <class t1, class t2>
 bool hashMap<t1, t2>::find(t1 k)
 {
-    // since i made a check at the end for i >= capacity
-    std::size_t found = lookup(k);
+    std::size_t i = 0;
+
+    // look for match
+    while (true) {
+        std::size_t index = (hash1(k) + i * hash2(k)) % capacity;
     
-    // if found value is greater than capacity, wasn't found
-    if (found >= capacity) {
-        return false;
-    } else {
-        return true;
+        // check table1 for a match
+        if (table1[index] != nullptr && table1[index]->key == k) {
+            return true;
+        }
+        // check table2 for a match
+        if (table2[index] != nullptr && table2[index]->key == k) {
+            return true;
+        }
+        
+        // if there's no match
+        ++i;
+
+        // if no match at all
+        if (i >= capacity) {
+            return false;
+        }
     }
 }
 
@@ -228,11 +242,11 @@ void hashMap<t1, t2>::update(t1 k, t2 v)
     }
 
     // if index was for table 1
-    if (table1[index]->key == k) {
+    if (table1[index] != nullptr && table1[index]->key == k) {
         table1[index]->value = v;
     } 
     // if index was for table 2
-    else if (table1[index]->key != k && table2[index]->key == k) 
+    else if (table2[index] != nullptr && table2[index]->key == k) 
     {
         table2[index]->value = v;
     }
@@ -251,12 +265,12 @@ t2 hashMap<t1, t2>::getValue(t1 k)
     }
 
     // if index was for table 1
-    if (table1[index]->key == k) {
+    if (table1[index] != nullptr && table1[index]->key == k) {
         // insert node at index in t1
         return table1[index]->value;
     } 
     // if index was for table 2
-    else if (table1[index]->key != k && table2[index]->key == k) 
+    else if (table2[index] != nullptr && table2[index]->key == k) 
     {
         // insert node at index in t2
         return table2[index]->value;
