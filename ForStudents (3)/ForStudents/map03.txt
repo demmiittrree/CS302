@@ -1,0 +1,15 @@
+Village Clocktower
+Village Lake
+Village Castle
+GrandHall Church
+GrandHall Lake
+GrandHall Ballroom
+Castle Lake
+Lake Mines
+Lake Church
+Lake Island
+Mines Castle
+Island CargoDepot
+Ballroom Island
+Clocktower GrandHall
+Clocktower Lake

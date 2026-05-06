@@ -1,0 +1,13 @@
+Ballroom CargoDepot
+Ballroom GrandHall
+Lake Church
+Castle Church
+GrandHall Clocktower
+Clocktower Castle
+Ballroom Lake
+Village Mines
+Village Ballroom
+Village CargoDepot
+Mines Castle
+Island GrandHall
+CargoDepot Island

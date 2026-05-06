@@ -1,0 +1,7 @@
+
+LEON!!!
+
+Enter map file: map03.txt
+Enter enemies file: enemies02.txt
+I'm coming Ashley!
+Village -> Clocktower -> GrandHall -> Church

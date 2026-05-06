@@ -1,0 +1,10 @@
+Castle 3
+Mines 7
+Church 1
+Ballroom 3
+Village 0
+CargoDepot 5
+Island 1
+Clocktower 1
+GrandHall 2
+Lake 8

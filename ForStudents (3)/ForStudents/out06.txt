@@ -1,0 +1,7 @@
+
+LEON!!!
+
+Enter map file: map02.txt
+Enter enemies file: enemies03.txt
+I'm coming Ashley!
+Village -> Mines -> Castle -> Church
